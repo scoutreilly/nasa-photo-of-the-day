@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import axios from "axios";
+import Card from './Components/Card.js'
 
 // https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 //
@@ -16,22 +17,24 @@ function App() {
     .get(`https://api.nasa.gov/planetary/apod?api_key=${myApiKey}`)
     .then(response => setSpaceData(response.data))
   }, [])
+  //&start_date=1998-05-24&end_date=1998-05-26
+  // console.log(spaceData);
 
-
-  console.log(spaceData);
-
-
-
-
-
-
+  // let spaceDataList = spaceData.map((item) => {
+  //   console.log(item);
+  // });
+  // console.log(spaceDataList)
 
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <p>Welcome to the beauty of space</p>
+      < Card 
+      title={spaceData.title}
+      date={spaceData.date}
+      description={spaceData.explanation}
+      image={spaceData.url}
+      copyright={spaceData.copyright}
+      />
     </div>
   );
 }
