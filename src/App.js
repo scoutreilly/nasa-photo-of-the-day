@@ -19,11 +19,13 @@ function App() {
   }, [])
   //&start_date=1998-05-24&end_date=1998-05-26
   // console.log(spaceData);
-
-  // let spaceDataList = spaceData.map((item) => {
-  //   console.log(item);
+  // let newSpace = Object.entries(spaceData);
+  // console.log(newSpace);
+  // newSpace.forEach((i) => {
+  //   console.log(i);
   // });
-  // console.log(spaceDataList)
+
+  // MAP HERE let spaceList = new
 
   return (
     <div className="App">
